@@ -1,0 +1,31 @@
+<html>
+
+<head>
+   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+
+<body>
+  <div class="navbar">
+    <a href="{{ url_for('home') }}">Home</a>
+    <a href="{{ url_for('form') }}">Dosha Quiz</a>
+    <a href="{{ url_for('foodcorner') }}">Food Corner</a>
+    <a href="{{ url_for('reports') }}">Report</a>
+    <a href="{{ url_for('chatbot') }}">Help</a>
+    <div class="navbar-right">
+      <a href="{{ url_for('profile') }}">Profile</a>
+      <a href="{{ url_for('logout') }}">Logout</a>
+    </div>
+  </div> <br><br>
+  <center>
+    <p>
+      User Id : {{ session['uid'] }} <br>
+      Name :{{ session['username'] }} <br>
+      Email Id :{{ session['email'] }} <br>
+      Age :{{ session['age'] }} <br>
+      Dosha :{{ session['dosh_identified'] }}
+    </p>
+  </center>
+
+</body>
+
+</html>

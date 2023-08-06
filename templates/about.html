@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   <div class="navbar">
+    <a href="{{ url_for('home') }}">Home</a>
+    <a href="{{ url_for('form') }}">Dosha Quiz</a>
+    <a href="{{ url_for('foodcorner') }}">Food Corner</a>
+    <a href="{{ url_for('reports') }}">Report</a>
+    <a href="{{ url_for('chatbot') }}">Help</a>
+    <div class="navbar-right">
+      <a href="{{ url_for('profile') }}">Profile</a>
+      <a href="{{ url_for('logout') }}">Logout</a>
+    </div>
+  </div>
+</head>
+<body>
+  
+  <style>
+    body {
+      margin-top: 70px;}
+    img {
+          width: 20%;
+          height: 20%;
+            }
+    .circle {
+      border-radius: 50%;
+      width: 45px;
+      height: 45px;
+      padding: 10px;
+      background: #fff;
+      border: 3px solid #000;
+      color: #000;
+      text-align: center;
+      font: 24px Arial, sans-serif;
+    }
+    @media screen and (max-width: 650px) {
+      .column {
+        width: 100%;
+        display: block;
+      }
+    }
+    .navbar {
+      overflow: hidden;
+      float: left;
+      background-color: #8a7765;
+      position: fixed;
+      top: 0;
+      left: 0px;
+      width: 100%;
+    }
+    
+  .navbar a {
+      float: left;
+      display: block;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+    
+  .navbar a:hover {
+      background: #ddd;
+      color: black;
+    }
+  
+  .navbar-right {
+      float: right;
+    }
+    </style>
+    <div class="about-section">
+    <center><img src="{{ url_for('static', filename='logo.png') }}" alt="logo">
+
+      <h1>About Ayura</h1><br>
+      <p>One easy way to stick to the principles of your dosha when out and about.<br>
+        Ayura can be your best health companion to aid in all of your health and wellness plans.<br> 
+        Based on Ayurveda, each of us has a unique mind-body type called as doshas.<br> 
+        Once you figure out what it is, then you have just found a hack to your life.</p></center>
+    </div><br>
+    <h2 style="text-align:center">So, How Does It Work?</h2><br>
+    <center><div class="column">
+      <div class="circle">1</div><br>
+        <div class="card">
+          <img class="log" src="{{ url_for('static', filename='about1.png') }}" alt="step1">
+          <div class="container">
+            <h2>Create an account</h2>
+            <p class="title">Fill in the registration form to start your journey with us.</p>
+          </div>
+        </div>
+      </div>
+    <br><br>
+      <div class="column">
+      <div class="circle">2</div><br>
+        <div class="card">
+          <img class="log" src="{{ url_for('static', filename='about2.png') }}" alt="step1 alt="step2">
+          <div class="container">
+            <h2>Take up the quiz</h2>
+            <p class="title">Answer the quiz as objective as possible, that best describes you.</p>
+          </div>
+        </div>
+      </div>
+     <br><br>
+      <div class="column">
+      <div class="circle">3</div><br>
+        <div class="card">
+          <img class="log" src="{{ url_for('static', filename='about3.png') }}" alt="step1 alt="step3">
+          <div class="container">
+            <h2>Discover you</h2>
+            <p class="title">By gathering information in this quiz, we’ll give you a breakdown of your specific dosha blend.</p>
+          </div>
+        </div>
+      </div>
+      <br><br>
+      <div class="column">
+        <div class="circle">4</div><br>
+        <div class="card">
+          <img class="log" src="{{ url_for('static', filename='about4.png') }}" alt="step1 alt="step4">
+          <div class="container">
+            <h2>Personalise Your Meal</h2>
+            <p class="title">Get a personalised meal plan based on your dosha for a week/month as you desire.</p>
+          </div>
+        </div>
+      </div>
+      </center>
+    </body>
+    <br><br>
+</html>

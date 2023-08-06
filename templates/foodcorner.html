@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Food rec</title>
+	
+</head>
+<body>
+    <ul>
+        {% for i in data%}
+        <li>{{i[0]}}<br><img src="{{i[1]}}"><br></li>
+        {%endfor%}
+      </ul>
+</body>
+</html>

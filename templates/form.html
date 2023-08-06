@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="keywords" content="Dosha, dosha imbalances, pitta, kapha, vata, healtygamergg, dr.k, rugleh">
+  <meta name="description" content="Ayurveda | Vikruti Online Quiz">
+  <meta name="author" content="Rugleh">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-137846449-6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-137846449-6');
+  </script>
+
+
+  <script defer src="fontawesome/js/solid.js"></script>
+  <script defer src="fontawesome/js/fontawesome.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- Bootstrap CSS -->
+
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <title>Dosha Quiz</title>
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="title text-left main-container">
+      Imbalances of the Doshas
+    </h1>
+    <h2>Answer all the questions as objective as possible, that best describes you</h2>
+
+    <form class="form">
+      <div class="row">
+
+        <div class="col-md-6" data-aos="fade-up">
+          <h5 class="question">Which best describes your forehead?</h5>
+          <div class="inputGroup">
+            <input id="radio1" value="wind" name="question1" type="radio" />
+            <label for="radio1">Narrow
+            </label>
+          </div>
+          <div class="inputGroup">
+            <input id="radio2" value="fire" name="question1" type="radio" />
+            <label for="radio2">Medium</label>
+          </div>
+          <div class="inputGroup">
+            <input id="radio3" value="water" name="question1" type="radio" />
+            <label for="radio3">Large, attractive</label>
+          </div>
+        </div>
+
+        <div class="col-md-6" data-aos="fade-up">
+          <h5 class="question">Which best describes your body weight?</h5>
+          <div class="inputGroup">
+            <input id="radio4" value="wind" name="question2" type="radio" />
+            <label for="radio4"> Lean</label>
+          </div>
+          <div class="inputGroup">
+            <input id="radio5" value="fire" name="question2" type="radio" />
+            <label for="radio5"> Average</label>
+          </div>
+          <div class="inputGroup">
+            <input id="radio6" value="water" name="question2" type="radio" />
+            <label for="radio6"> Heavy</label>
+          </div>
+        </div>
+
+        <div class="col-md-6" data-aos="fade-up">
+          <h5 class="question">Which best describes your body structure?</h5>
+          <div class="inputGroup">
+            <input id="radio7" value="wind" name="question3" type="radio" />
+            <label for="radio7"> Tall</label>
+          </div>
+          <div class="inputGroup">
+            <input id="radio8" value="fire" name="question3" type="radio" />
+            <label for="radio8"> Medium</label>
+          </div>
+          <div class="inputGroup">
+            <input id="radio9" value="water" name="question3" type="radio" />
+            <label for="radio9"> Short</label>
+          </div>
+        </div>
+
+        <div class="col-md-6" data-aos="fade-up">
+          <h5 class="question">Which best describes your skin texture?</h5>
+          <div class="inputGroup">
+            <input id="radio10" value="wind" name="question4" type="radio" />
+            <label for="radio10"> Rough, dry
+            </label>
+          </div>
+          <div class="inputGroup">
+            <input id="radio11" value="fire" name="question4" type="radio" />
+            <label for="radio11"> Hydrated, soft
+            </label>
+          </div>
+          <div class="inputGroup">
+            <input id="radio12" value="water" name="question4" type="radio" />
+            <label for="radio12"> Smooth, oily
+            </label>
+          </div>
+        </div>
+
+        <div class="col-md-6" data-aos="fade-up">
+          <h5 class="question">Which best describes your eyes?</h5>
+          <div class="inputGroup">
+            <input id="radio13" value="wind" name="question5" type="radio" />
+            <label for="radio13"> Small, protruding
+            </label>
+          </div>
+          <div class="inputGroup">
+            <input id="radio14" value="fire" name="question5" type="radio" />
+            <label for="radio14"> Coloured iris, medium
+            </label>
+          </div>
+          <div class="inputGroup">
+            <input id="radio15" value="water" name="question5" type="radio" />
+            <label for="radio15"> Large, attractive
+            </label>
+          </div>
+        </div>
+
+        <div class="col-md-6" data-aos="fade-up">
+          <h5 class=" question">Which best describes your eyelashes?</h5>
+          <div class="inputGroup">
+            <input id="radio16" value="wind" name="question6" type="radio" />
+            <label for="radio16"> Scanty</label>
+          </div>
+          <div class="inputGroup">
+            <input id="radio17" value="fire" name="question6" type="radio" />
+            <label for="radio17"> Sharp</label>
+          </div>
+          <div class="inputGroup">
+            <input id="radio18" value="water" name="question6" type="radio" />
+            <label for="radio18"> Thick</label>
+          </div>
+        </div>
+
+        <div class="col-md-6" data-aos="fade-up">
+          <h5 class="question">Which best describes your nails?</h5>
+          <div class="inputGroup">
+            <input id="radio19" value="wind" name="question7" type="radio" />
+            <label for="radio19"> Rough, dry, irregular, cracked
+            </label>
+          </div>
+          <div class="inputGroup">
+            <input id="radio20" value="fire" name="question7" type="radio" />
+            <label for="radio20"> Glossy, copper-colored
+            </label>
+          </div>
+          <div class="inputGroup">
+            <input id="radio21" value="water" name="question7" type="radio" />
+            <label for="radio21"> Long, white, strong, smooth
+            </label>
+          </div>
+        </div>
+
+        <div class="col-md-6" data-aos="fade-up">
+          <h5 class="question">Which best describes your teeth?</h5>
+          <div class="inputGroup">
+            <input id="radio22" value="wind" name="question8" type="radio" />
+            <label for="radio22"> Cracked, irregular, dull white
+            </label>
+          </div>
+          <div class="inputGroup">
+            <input id="radio23" value="fire" name="question8" type="radio" />
+            <label for="radio23"> Moderate, yellow, plaque
+            </label>
+          </div>
+          <div class="inputGroup">
+            <input id="radio24" value="water" name="question8" type="radio" />
+            <label for="radio24"> Large, white, strong
+            </label>
+          </div>
+        </div>
+
+        <div class="col-md-6" data-aos="fade-up">
+          <h5 class="question">Which best describes your tongue?</h5>
+          <div class="inputGroup">
+            <input id="radio25" value="wind" name="question9" type="radio" />
+            <label for="radio25"> Rough, furrowed
+            </label>
+          </div>
+          <div class="inputGroup">
+            <input id="radio26" value="fire" name="question9" type="radio" />
+            <label for="radio26"> Glossy red
+            </label>
+          </div>
+          <div class="inputGroup">
+            <input id="radio27" value="water" name="question9" type="radio" />
+            <label for="radio27"> Smooth pink
+            </label>
+          </div>
+        </div>
+
+        <div class="col-md-6" data-aos="fade-up">
+          <h5 class="question">Which best describes your chest?</h5>
+          <div class="inputGroup">
+            <input id="radio28" value="wind" name="question10" type="radio" />
+            <label for="radio28"> Narrow</label>
+          </div>
+          <div class="inputGroup">
+            <input id="radio29" value="fire" name="question10" type="radio" />
+            <label for="radio29"> Medium</label>
+          </div>
+          <div class="inputGroup">
+            <input id="radio30" value="water" name="question10" type="radio" />
+            <label for="radio30"> Broad</label>
+          </div>
+        </div>
+
+        <div class="col-md-6" data-aos="fade-up">
+          <h5 class="question">Which best describes your hair?</h5>
+          <div class="inputGroup">
+            <input id="radio31" value="wind" name="question11" type="radio" />
+            <label for="radio31"> Rough, dry, irregular, breaking
+            </label>
+          </div>
+          <div class="inputGroup">
+            <input id="radio32" value="fire" name="question11" type="radio" />
+            <label for="radio32"> Scanty, baldness, greying
+            </label>
+          </div>
+          <div class="inputGroup">
+            <input id="radio33" value="water" name="question11" type="radio" />
+            <label for="radio33"> Plenty, thick, glossy
+            </label>
+          </div>
+        </div>
+
+        <div class="col-md-6" data-aos="fade-up">
+          <h5 class="question">Which best describes your body strength?</h5>
+          <div class="inputGroup">
+            <input id="radio34" value="wind" name="question12" type="radio" />
+            <label for="radio34"> Weak</label>
+          </div>
+          <div class="inputGroup">
+            <input id="radio35" value="fire" name="question12" type="radio" />
+            <label for="radio35"> Moderate</label>
+          </div>
+          <div class="inputGroup">
+            <input id="radio36" value="water" name="question12" type="radio" />
+            <label for="radio36"> Strong</label>
+          </div>
+        </div>
+
+        <div class="col-md-6" data-aos="fade-up">
+          <h5 class="question">Which best describes your blood vessels?</h5>
+          <div class="inputGroup">
+            <input id="radio37" value="wind" name="question13" type="radio" />
+            <label for="radio37"> Prominent, reticulated
+            </label>
+          </div>
+          <div class="inputGroup">
+            <input id="radio38" value="fire" name="question13" type="radio" />
+            <label for="radio38"> Less prominent, greenish
+            </label>
+          </div>
+          <div class="inputGroup">
+            <input id="radio39" value="water" name="question13" type="radio" />
+            <label for="radio39"> Deep-seated, not visible easily
+            </label>
+          </div>
+        </div>
+
+        <div class="col-md-6" data-aos="fade-up">
+          <h5 class="question">Which best describes your body temperature?</h5>
+          <div class="inputGroup">
+            <input id="radio40" value="wind" name="question14" type="radio" />
+            <label for="radio40"> Cold</label>
+          </div>
+          <div class="inputGroup">
+            <input id="radio41" value="fire" name="question14" type="radio" />
+            <label for="radio41"> Hot</label>
+          </div>
+          <div class="inputGroup">
+            <input id="radio42" value="water" name="question14" type="radio" />
+            <label for="radio42"> Normal</label>
+          </div>
+        </div>
+
+        <div class="col-md-6" data-aos="fade-up">
+          <h5 class="question">Which best describes your body odour?</h5>
+          <div class="inputGroup">
+            <input id="radio43" value="wind" name="question15" type="radio" />
+            <label for="radio43"> None</label>
+          </div>
+          <div class="inputGroup">
+            <input id="radio44" value="fire" name="question15" type="radio" />
+            <label for="radio44"> Foul smell
+            </label>
+          </div>
+          <div class="inputGroup">
+            <input id="radio45" value="water" name="question15" type="radio" />
+            <label for="radio45"> Oily smell
+            </label>
+          </div>
+        </div>
+
+        <div class="col-md-6" data-aos="fade-up">
+          <h5 class="question">Which best describes your voice?</h5>
+          <div class="inputGroup">
+            <input id="radio46" value="wind" name="question16" type="radio" />
+            <label for="radio46"> Fast, irritating
+            </label>
+          </div>
+          <div class="inputGroup">
+            <input id="radio47" value="fire" name="question16" type="radio" />
+            <label for="radio47"> Sharp, commanding
+            </label>
+          </div>
+          <div class="inputGroup">
+            <input id="radio48" value="water" name="question16" type="radio" />
+            <label for="radio48"> Soft, sweet
+            </label>
+          </div>
+        </div>
+
+        <div class="col-md-6" data-aos="fade-up">
+          <h5 class="question">Which best describes your perspiration?</h5>
+          <div class="inputGroup">
+            <input id="radio49" value="wind" name="question17" type="radio" />
+            <label for="radio49"> Seldom</label>
+          </div>
+          <div class="inputGroup">
+            <input id="radio50" value="fire" name="question17" type="radio" />
+            <label for="radio50"> Excessive</label>
+          </div>
+          <div class="inputGroup">
+            <input id="radio51" value="water" name="question17" type="radio" />
+            <label for="radio51"> Normal</label>
+          </div>
+        </div>
+
+        <div class="col-md-6" data-aos="fade-up">
+          <h5 class="question">Which best describes your walk?</h5>
+          <div class="inputGroup">
+            <input id="radio52" value="wind" name="question18" type="radio" />
+            <label for="radio52"> Very quick
+            </label>
+          </div>
+          <div class="inputGroup">
+            <input id="radio53" value="fire" name="question18" type="radio" />
+            <label for="radio53"> Normal
+            </label>
+          </div>
+          <div class="inputGroup">
+            <input id="radio54" value="water" name="question18" type="radio" />
+            <label for="radio54"> Slow steady
+            </label>
+          </div>
+        </div>
+
+        <div class="col-md-6" data-aos="fade-up">
+          <h5 class="question">Which best describes your activity performance?</h5>
+          <div class="inputGroup">
+            <input id="radio55" value="wind" name="question19" type="radio" />
+            <label for="radio55"> Quick-acting
+            </label>
+          </div>
+          <div class="inputGroup">
+            <input id="radio56" value="fire" name="question19" type="radio" />
+            <label for="radio56"> Moderate
+            </label>
+          </div>
+          <div class="inputGroup">
+            <input id="radio57" value="water" name="question19" type="radio" />
+            <label for="radio57"> Stagnant
+            </label>
+          </div>
+        </div>
+
+        <div class="col-md-6" data-aos="fade-up">
+          <h5 class="question">Which best describes your digestive power?</h5>
+          <div class="inputGroup">
+            <input id="radio58" value="wind" name="question20" type="radio" />
+            <label for="radio58"> Irregular
+            </label>
+          </div>
+          <div class="inputGroup">
+            <input id="radio59" value="fire" name="question20" type="radio" />
+            <label for="radio59"> Powerful
+            </label>
+          </div>
+          <div class="inputGroup">
+            <input id="radio60" value="water" name="question20" type="radio" />
+            <label for="radio60"> Weak
+            </label>
+          </div>
+        </div>
+
+        <div class="col-md-6" data-aos="fade-up">
+          <h5 class="question">Which best describes your thirst?</h5>
+          <div class="inputGroup">
+            <input id="radio61" value="wind" name="question21" type="radio" />
+            <label for="radio61"> Irregular
+            </label>
+          </div>
+          <div class="inputGroup">
+            <input id="radio62" value="fire" name="question21" type="radio" />
+            <label for="radio62"> Very often
+            </label>
+          </div>
+          <div class="inputGroup">
+            <input id="radio63" value="water" name="question21" type="radio" />
+            <label for="radio63"> Seldom
+            </label>
+          </div>
+        </div>
+
+        <div class="col-md-6" data-aos="fade-up">
+          <h5 class="question">What's your quantity of food intake?</h5>
+          <div class="inputGroup">
+            <input id="radio64" value="wind" name="question22" type="radio" />
+            <label for="radio64"> Large or small
+            </label>
+          </div>
+          <div class="inputGroup">
+            <input id="radio65" value="fire" name="question22" type="radio" />
+            <label for="radio65"> Large
+            </label>
+          </div>
+          <div class="inputGroup">
+            <input id="radio66" value="water" name="question22" type="radio" />
+            <label for="radio66"> Normal
+            </label>
+          </div>
+        </div>
+
+        <div class="col-md-6" data-aos="fade-up">
+          <h5 class="question">What's your preference of taste?</h5>
+          <div class="inputGroup">
+            <input id="radio67" value="wind" name="question23" type="radio" />
+            <label for="radio67"> Sweet, salt, sour
+            </label>
+          </div>
+          <div class="inputGroup">
+            <input id="radio68" value="fire" name="question23" type="radio" />
+            <label for="radio68"> Sweet, bitter, astringent
+            </label>
+          </div>
+          <div class="inputGroup">
+            <input id="radio69" value="water" name="question23" type="radio" />
+            <label for="radio69"> Pungent, astringent, bitter
+            </label>
+          </div>
+        </div>
+
+        <div class="col-md-6" data-aos="fade-up">
+          <h5 class="question">Which best describes your bowel movement?</h5>
+          <div class="inputGroup">
+            <input id="radio70" value="wind" name="question24" type="radio" />
+            <label for="radio70"> Irregular
+            </label>
+          </div>
+          <div class="inputGroup">
+            <input id="radio71" value="fire" name="question24" type="radio" />
+            <label for="radio71"> Loose
+            </label>
+          </div>
+          <div class="inputGroup">
+            <input id="radio72" value="water" name="question24" type="radio" />
+            <label for="radio72"> Regular
+            </label>
+          </div>
+        </div>
+
+        <div class="col-md-6" data-aos="fade-up">
+          <h5 class="question">Which best describes your dreams?</h5>
+          <div class="inputGroup">
+            <input id="radio73" value="wind" name="question25" type="radio" />
+            <label for="radio73"> Frequent, disturbed</label>
+          </div>
+          <div class="inputGroup">
+            <input id="radio74" value="fire" name="question25" type="radio" />
+            <label for="radio74"> Moderate, colorful</label>
+          </div>
+          <div class="inputGroup">
+            <input id="radio75" value="water" name="question25" type="radio" />
+            <label for="radio75"> Infrequent, romantic</label>
+          </div>
+        </div>
+
+        <div class="col-md-6" data-aos="fade-up">
+          <h5 class="question">Which best describes your sleep?</h5>
+          <div class="inputGroup">
+            <input id="radio76" value="wind" name="question26" type="radio" />
+            <label for="radio76"> Disturbed
+            </label>
+          </div>
+          <div class="inputGroup">
+            <input id="radio77" value="fire" name="question26" type="radio" />
+            <label for="radio77"> Normal
+            </label>
+          </div>
+          <div class="inputGroup">
+            <input id="radio78" value="water" name="question26" type="radio" />
+            <label for="radio78"> Deep
+            </label>
+          </div>
+        </div>
+
+        <div class="col-md-6" data-aos="fade-up">
+          <h5 class="question">Which best describes your grasping ability?</h5>
+          <div class="inputGroup">
+            <input id="radio79" value="wind" name="question27" type="radio" />
+            <label for="radio79"> Fast</label>
+          </div>
+          <div class="inputGroup">
+            <input id="radio80" value="fire" name="question27" type="radio" />
+            <label for="radio80"> Quick</label>
+          </div>
+          <div class="inputGroup">
+            <input id="radio81" value="water" name="question27" type="radio" />
+            <label for="radio81"> Slow</label>
+          </div>
+        </div>
+
+        <div class="col-md-6" data-aos="fade-up">
+          <h5 class="question">Which best describes your memory?</h5>
+          <div class="inputGroup">
+            <input id="radio82" value="wind" name="question28" type="radio" />
+            <label for="radio82"> Irregular, excellent short term and weak long term memory
+            </label>
+          </div>
+          <div class="inputGroup">
+            <input id="radio83" value="fire" name="question28" type="radio" />
+            <label for="radio83"> Powerful
+            </label>
+          </div>
+          <div class="inputGroup">
+            <input id="radio84" value="water" name="question28" type="radio" />
+            <label for="radio84"> The good long term memory
+            </label>
+          </div>
+        </div>
+
+        <div class="col-md-6" data-aos="fade-up">
+          <h5 class="question">Which best describes your emotions?</h5>
+          <div class="inputGroup">
+            <input id="radio85" value="wind" name="question29" type="radio" />
+            <label for="radio85"> Rebel, innovator</label>
+          </div>
+          <div class="inputGroup">
+            <input id="radio86" value="fire" name="question29" type="radio" />
+            <label for="radio86"> Leader, fanatic</label>
+          </div>
+          <div class="inputGroup">
+            <input id="radio87" value="water" name="question29" type="radio" />
+            <label for="radio87"> Conservative, provider</label>
+          </div>
+        </div>
+
+        <div class="col-md-6" data-aos="fade-up">
+          <h5 class="question">Which best describes your temperament?</h5>
+          <div class="inputGroup">
+            <input id="radio91" value="wind" name="question31" type="radio" />
+            <label for="radio91"> Quick initiative
+            </label>
+          </div>
+          <div class="inputGroup">
+            <input id="radio92" value="fire" name="question31" type="radio" />
+            <label for="radio92"> Moderate
+            </label>
+          </div>
+          <div class="inputGroup">
+            <input id="radio93" value="water" name="question31" type="radio" />
+            <label for="radio93"> Very slow, lethargic
+            </label>
+          </div>
+        </div>
+
+
+      </div>
+    </form>
+
+    <div class="row">
+      <div class="col-md-12" data-aos="fade-up">
+        <a href="#results"><button id="submitButton" class="btn btn-outline-success btn-ayurveda margin-top-large">
+            See results
+          </button></a>
+      </div>
+    </div>
+
+    <section id="results">
+      <div class="row">
+        <div class="col-md-6" data-aos="fade-up">
+          <div class="chart">
+            <canvas id="polar-chart" width="100%" height="50%"></canvas>
+          </div>
+        </div>
+        <div class="col-md-6" data-aos="fade-up">
+          <p id="doshanumbers" class="lead">
+            <span id="result" name="result"></span><br>
+
+          <p class="lead"><span id="percentages"> </span></p>
+          </p>
+          <p id="wheretogo" class="lead">
+
+          </p>
+        </div>
+      </div>
+
+    </section>
+
+    <hr>
+
+  </div>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script>
+    $(document).ready(function () {
+      AOS.init();
+
+      document.getElementById("wheretogo").style.visibility = "hidden";
+      document.getElementById("doshanumbers").style.visibility = "hidden";
+
+
+      $("button").click(function () {
+        var favorite = [];
+        $.each($("input[name='question1']:checked"), function () {
+          favorite.push($(this).val());
+        });
+        $.each($("input[name='question2']:checked"), function () {
+          favorite.push($(this).val());
+        });
+        $.each($("input[name='question3']:checked"), function () {
+          favorite.push($(this).val());
+        });
+        $.each($("input[name='question4']:checked"), function () {
+          favorite.push($(this).val());
+        });
+        $.each($("input[name='question5']:checked"), function () {
+          favorite.push($(this).val());
+        });
+        $.each($("input[name='question6']:checked"), function () {
+          favorite.push($(this).val());
+        });
+        $.each($("input[name='question7']:checked"), function () {
+          favorite.push($(this).val());
+        });
+        $.each($("input[name='question8']:checked"), function () {
+          favorite.push($(this).val());
+        });
+        $.each($("input[name='question9']:checked"), function () {
+          favorite.push($(this).val());
+        });
+        $.each($("input[name='question10']:checked"), function () {
+          favorite.push($(this).val());
+        });
+        $.each($("input[name='question11']:checked"), function () {
+          favorite.push($(this).val());
+        });
+        $.each($("input[name='question12']:checked"), function () {
+          favorite.push($(this).val());
+        });
+        $.each($("input[name='question13']:checked"), function () {
+          favorite.push($(this).val());
+        });
+        $.each($("input[name='question14']:checked"), function () {
+          favorite.push($(this).val());
+        });
+        $.each($("input[name='question15']:checked"), function () {
+          favorite.push($(this).val());
+        });
+        $.each($("input[name='question16']:checked"), function () {
+          favorite.push($(this).val());
+        });
+        $.each($("input[name='question17']:checked"), function () {
+          favorite.push($(this).val());
+        });
+        $.each($("input[name='question18']:checked"), function () {
+          favorite.push($(this).val());
+        });
+        $.each($("input[name='question19']:checked"), function () {
+          favorite.push($(this).val());
+        });
+        $.each($("input[name='question20']:checked"), function () {
+          favorite.push($(this).val());
+        });
+        $.each($("input[name='question21']:checked"), function () {
+          favorite.push($(this).val());
+        });
+        $.each($("input[name='question22']:checked"), function () {
+          favorite.push($(this).val());
+        });
+        $.each($("input[name='question23']:checked"), function () {
+          favorite.push($(this).val());
+        });
+        $.each($("input[name='question24']:checked"), function () {
+          favorite.push($(this).val());
+        });
+        $.each($("input[name='question25']:checked"), function () {
+          favorite.push($(this).val());
+        });
+        $.each($("input[name='question26']:checked"), function () {
+          favorite.push($(this).val());
+        });
+        $.each($("input[name='question27']:checked"), function () {
+          favorite.push($(this).val());
+        });
+        $.each($("input[name='question28']:checked"), function () {
+          favorite.push($(this).val());
+        });
+        $.each($("input[name='question29']:checked"), function () {
+          favorite.push($(this).val());
+        });
+        $.each($("input[name='question30']:checked"), function () {
+          favorite.push($(this).val());
+        });
+        $.each($("input[name='question31']:checked"), function () {
+          favorite.push($(this).val());
+        });
+
+        document.getElementById("wheretogo").style.visibility = "visible";
+        document.getElementById("doshanumbers").style.visibility = "visible";
+
+
+        counts = {};
+
+        jQuery.each(favorite, function (key, value) {
+          if (!counts.hasOwnProperty(value)) {
+            counts[value] = 1;
+          } else {
+            counts[value]++;
+          }
+        });
+
+        console.log(counts.wind);
+        console.log(counts.fire);
+        console.log(counts.water);
+
+        function percentage(partialValue, totalValue) {
+          return ((100 * partialValue) / totalValue).toFixed(2);
+        }
+
+        if (counts.wind == undefined) { counts.wind = 0 }
+        if (counts.fire == undefined) { counts.fire = 0 }
+        if (counts.water == undefined) { counts.water = 0 }
+
+        var pwind = percentage(counts.wind, counts.wind + counts.fire + counts.water);
+        var pfire = percentage(counts.fire, counts.wind + counts.fire + counts.water);
+        var pwater = percentage(counts.water, counts.wind + counts.fire + counts.water);
+
+
+        var htmlwind = ' ';
+        var htmlfire = ' ';
+        var htmlwater = ' ';
+
+
+        for (var i = 0; i < counts.wind; i++) {
+          htmlwind = htmlwind + '<i class="fas fa-wind result"></i>';
+        }
+
+        for (var i = 0; i < counts.fire; i++) {
+          htmlfire = htmlfire + '<i class="fas fa-fire result"></i>';
+        }
+
+        for (var i = 0; i < counts.water; i++) {
+          htmlwater = htmlwater + '<i class="fas fa-tint result"></i>';
+        }
+        let dosha;
+        if ((counts.water > counts.fire) && (counts.water > counts.wind)) {
+          document.getElementById("result").innerHTML = 'Kapha';
+          dosha = 'Kapha';
+        }
+        else if (counts.fire > counts.wind) {
+          document.getElementById("result").innerHTML = 'Pitta';
+          dosha = 'Pitta';
+        }
+        else {
+          document.getElementById("result").innerHTML = 'Vata';
+          dosha = 'Vata';
+        }
+        document.getElementById("percentages").innerHTML = '<b>' + pwind + '% <span id="vata">Vata</span></b> <br> <b>' + pfire + '% <span id="pitta">Pitta</span> </b> <br>  <b>' + pwater + '% <span id="kapha">Kapha</span> </b>';
+        myChart = new Chart(document.getElementById("polar-chart"), {
+          type: "doughnut",
+          data: {
+            labels: ["Vata", "Pitta", "Kapha"],
+            datasets: [
+              {
+                label: "Dosha",
+                backgroundColor: ["lightcoral", "orange", "lightblue"],
+                data: [counts.wind, counts.fire, counts.water]
+              }
+            ]
+          },
+          options: {
+            title: {
+              display: true,
+              text: "Dosha Imbalance"
+            }
+          }
+        }
+        );
+
+
+        let request = new XMLHttpRequest()
+        request.open("POST", `/processdosha/${JSON.stringify({ dosh: dosha, vata: pwind, pitta: pfire, kapha: pwater })}`)
+        request.send();
+      });
+
+    });
+
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>

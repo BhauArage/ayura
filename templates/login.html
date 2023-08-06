@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> 
+  <div class="navbar">
+    <a href="#ayura">Ayura</a>
+  </div>
+</head>
+       
+<body>
+<div id="form">
+ <div id="form_left">
+  <img src="{{ url_for('static', filename='logo.png') }}" alt="computer icon" />
+</div>
+<div id="form_right">
+ <form action="{{ url_for('login') }}" method="post">
+  <br><br><br><br><br><br>
+ <h2><center><strong>Login</strong></center></h2><br>
+  <div class="input_container">
+  <input required placeholder="Email" type="email" class="input_field" name="email" id="email"/></div><br><br>
+  <div class="input_container">
+  <input required placeholder="Password" type="password" class="input_field" name="password" id="password"/></div><br><br>
+  <div id="input_submit">
+    <input type="submit" value="Login" class="input_field"/></div><br><br>
+   <span id="create_account">
+ <center><p class="bottom">Don't have an account?  <a href="{{url_for('register') }}"> Sign Up here</a></p></center>
+   </span>
+ </form>
+ </div>
+ </div>
+</body>

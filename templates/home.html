@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+       @media screen and (max-width: 650px) {
+      .column {
+        width: 100%;
+        display: block;
+      }
+    }
+
+    .navbar {
+      overflow: hidden;
+      float: left;
+      background-color: #8a7765;
+      position: fixed;
+      top: 0;
+      left: 0px;
+      width: 100%;
+    }
+
+    .navbar a {
+      float: left;
+      display: block;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+    .navbar a:hover {
+      background: #ddd;
+      color: black;
+    }
+
+    .navbar-right {
+      float: right;
+    }
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js">
+	</script>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.js">
+	</script>
+  <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/ui-lightness/jquery-ui.css"
+  rel="stylesheet" type="text/css" />
+  
+</head>
+
+<body>
+  <div class="navbar">
+    <a href="{{ url_for('home') }}">Home</a>
+    <a href="{{ url_for('form') }}">Dosha Quiz</a>
+    <a href="{{ url_for('foodcorner') }}">Food Corner</a>
+    <a href="{{ url_for('reports') }}">Report</a>
+    <a href="{{ url_for('chatbot') }}">Help</a>
+    <div class="navbar-right">
+      <a href="{{ url_for('profile') }}">Profile</a>
+      <a href="{{ url_for('logout') }}">Logout</a>
+    </div>
+  </div><br><br><br>
+  <!-- to add food items -->
+  <form method="post">
+
+    <input type="text" id="tags" name="tags" value="{{ request.form['tags'] }}">
+    
+    <script>
+  $( function() {
+    var availableTags = [
+      {% for d in data %}
+        "{{ d }}",
+      {% endfor %}
+    ];
+    $( "#tags" ).autocomplete({
+    source: availableTags
+    });
+  } );
+  </script>
+  <button type="submit">Add Item</button>
+  <!-- <input type="button" value="Add Item" > -->
+  </form>
+  {{msg}}<br>
+  <h3>Food You had today!!</h3>
+{%if foodData%}
+<ul>
+  {% for food in foodData%}
+  <li>{{food['food']}}</li>
+  {%endfor%}
+</ul>
+<br>
+{%else%}
+<i>
+    <p>No Data yet</p>
+</i>
+{%endif%}
+</body>
+</html>

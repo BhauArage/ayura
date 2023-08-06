@@ -1,0 +1,55 @@
+<style>
+    .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+    }
+
+    img {
+        max-width: 100%;
+    }
+
+    .row {
+        display: flex;
+    }
+
+    .column {
+        flex: 50%;
+        padding: 5px;
+    }
+
+    h4 {
+        text-align: center;
+    }
+
+    p {
+        text-align: center;
+        margin: 0;
+    }
+</style>
+<h3 style="text-align: center;">Changes tracked</h3>
+{% for img,img2,foodDict,barimage in images %}
+<div class="row">
+    <div class="column">
+        <h4>Before</h4>
+        <img src="data:image/jpeg;base64, {{ img }}" alt="Before">
+    </div>
+    <div class="column">
+        <h4>After</h4>
+        <img src="data:image/jpeg;base64, {{ img2 }}" alt="After">
+    </div>
+</div>
+    <div class="row">
+        <div class="column">
+            <h4 style="text-align: center;">Food You had between</h4>
+            {% for f1 in foodDict%}
+            <p>{{f1['food']}}</p>
+            {%endfor%}
+        </div>
+        <div class="column">
+            <img src="data:image/jpeg;base64, {{ barimage }}" class="center">
+            <br>
+        </div>
+    </div>
+    {% endfor %}

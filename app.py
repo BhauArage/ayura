@@ -5,16 +5,15 @@ from io import BytesIO
 from matplotlib.figure import Figure
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 import matplotlib.pyplot as plt
-from flask import Flask, jsonify, render_template, request, redirect, url_for, session, abort,make_response
+from flask import Flask, jsonify, render_template, request, redirect, url_for, session, abort
 from flask_mysqldb import MySQL
 import MySQLdb.cursors
 import re
 import json
+
 import pandas as pd
-# import pdfkit
 import numpy as np
 import model as m
-import os
 
 # imports
 from flask import Flask, render_template, request
@@ -280,18 +279,8 @@ def report():
         img = createGraph(np.array(
             [i['t2.vata'], i['t2.pitta'], i['t2.kapha']]), i['t2.dosh_identified'], i['t2.test_date'])
         images.append(img)
-    # rendered=render_template("reports.html", images=zip(images, afterimages,food,barimages))
-    # config = pdfkit.configuration(wkhtmltopdf="C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltopdf.exe")
-    # pdf=pdfkit.from_string(rendered,configuration=config)
-    # response=make_response(pdf)
-    # response.headers['Content-Type']='application/pdf'
-    # response.headers['Content-Dispostion']='inline; filename=output.pdf'
-    # # return response
     return render_template("reports.html", images=zip(images, afterimages,food,barimages))
 
-# @app.route("/download", methods=["POST", "GET"])
-# def download():
-    
 
 if __name__ == "__main__":
     app.run(debug=True)

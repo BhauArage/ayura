@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" >
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Chatbot</title>
+      </head>
+
+    <body>
+       <div class="navbar">
+    <a href="{{ url_for('home') }}">Home</a>
+    <a href="{{ url_for('form') }}">Dosha Quiz</a>
+    <a href="{{ url_for('foodcorner') }}">Food Corner</a>
+    <a href="{{ url_for('reports') }}">Report</a>
+    <a href="{{ url_for('chatbot') }}">Help</a>
+    <div class="navbar-right">
+      <a href="{{ url_for('profile') }}">Profile</a>
+      <a href="{{ url_for('logout') }}">Logout</a>
+    </div>
+  </div>
+          <div class="center">
+          <div class ="bodystyle">
+            <img src="{{ url_for('static', filename='logo.png') }}" alt="logo" >
+          <div class="glass"><br><br><br><br><br><br>
+            <h1>&nbsp Ask Your Question...</h1><br><br>
+            <div class="input_container" >
+                <input
+                    type="text"
+                    id="userBox"
+                    class="input_field"
+                    onfocus="this.value=''"
+                    onkeydown="if(event.keyCode == 13){ talk()}"
+                    placeholder="Type your Question"
+                />
+            </div><br><br>
+            <p id="chatlog">-- Answer --</p>       
+        <script>
+            function talk() {
+    var know = {
+        "hi": "Hello!",
+        "who are you": "Hello, Ayura here ",
+        "how are you": "Good :)",
+        "what is dosha":"Doshas are the three energies that define every person's makeup.",
+        "what is ayurveda":"Ayurveda is a system of medicine based on the idea that <br>disease is caused by an imbalance or stress in a person's consciousness.",
+        "how will I know my dosha":"Take the quiz under Dosha Quiz",
+        "what is vata":"Vata consists mostly of the two elements<br> air and space<br> and is generally described as cold, <br>light, dry, rough, flowing, and spacious.",
+        "what is pitta":"Known for being associated with a tenacious<br> personality, the pitta dosha is based on fire and water. <br>It’s commonly described as hot, light, sharp, oily, <br>liquid, and mobile. Summer is known as <br>pitta season for its sunny, hot days.",
+        "what is kapha":"Kapha is based on earth and water.<br> It can be described as steady, stable, heavy, slow, <br>cold, and soft.",
+        "food to eat for vata":"warm, “moist”, and soft foods (e.g., berries,<br> bananas, peaches, cooked vegetables, oats, <br>brown rice, lean meat, eggs, dairy)",
+        "food to eat for pitta":"spicy, acidic, and filling foods (e.g., most fruits<br> and vegetables, whole grains, eggs, low fat cheese,<br> unprocessed meats, hot spices)",
+        "food to eat for kapha":"light, cold, sweet, and energizing foods<br> (e.g., fruits, non-starchy vegetables, oats, eggs)",
+        "exercise for vata":"Due to their “on-the-go” nature, those with <br>vata-dominant doshas should focus on activities <br>that involve constant movement, such as cycling,<br> running, walking, yoga, tai chi, etc.",
+        "exercise for pitta":"Kapha doshas work best with a workout buddy and<br> should focus on a combination of cardio and <br>weight-resistance exercise to stay interested and motivated. <br>Any type of movement is beneficial for this group.",
+        "exercise for kapha":"Pitta doshas tend to push themselves too hard<br> and should avoid exercising in the heat. Team sports<br> are an excellent way to stay active while satisfying <br>pitta’s natural competitiveness.",
+        "food to avoid for vata":"Bitter, dried, and cold foods (e.g., raw <br> vegetables, cold desserts, dried fruit, nuts, seeds)",
+        "food to avoid for pitta":"Heavy, “fatty” foods (e.g., fats, oils, processed foods, nuts, seeds)",
+        "food to avoid for kapha":"Heavy, spicy, and sour foods (e.g., red meat, potatoes, hot spices)",
+        "ok": "Thank you so much ",
+        "bye": "Bye!",
+    };
+    var user = document.getElementById("userBox").value;
+    document.getElementById("chatLog").innerHTML = user + "<br>";
+    if (user in know) {
+        document.getElementById("chatLog").innerHTML = know[user] + "<br>";
+    } else {
+        document.getElementById("chatLog").innerHTML =
+            "Sorry,I didn't understand <br>";
+    }
+}
+
+        </script>
+        </div>
+      </div>
+    </body>
+</html>

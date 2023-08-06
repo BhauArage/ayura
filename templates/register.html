@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <div class="navbar">
+        <a href="#ayura">Ayura</a>
+      </div>
+      <title>Register</title>
+       <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+<div id="form">
+   <div id="form_left">
+    <img src="{{ url_for('static', filename='logo.png') }}" alt="computer icon" />
+   </div>
+  <div id="form_right">
+   <form method="post">
+     <h2><center><strong>Create an account</strong></center></h2><br>
+     <div class="msg">{{ msg }}</div>
+   <div class="input_container">
+    <input required placeholder="Username" type="text" class="input_field" name="username" id="username"/></div>
+    <br><br>
+    <div class="input_container">
+    <input required placeholder="Email" type="email" class="input_field" name="email" id="email"/></div>
+    <br><br>
+    <div class="input_container">
+    <input required placeholder="Password" type="password" class="input_field" name="password" id="password"/></div>
+    <br><br>
+    <div class="input_container">
+    <input required placeholder="Re-enter password" type="password" class="input_field" name="password1" id="password1"/></div>
+    <br><br>
+    <div class="input_container">
+    <input required placeholder="Age" type="text" class="input_field" name="age" id="age"/></div>
+    <br><br>
+    <div id="input_submit">
+     <input type="submit" value="Sign Up" class="input_field"/></div>
+    </form>
+     <span id="create_account">
+        <center><p class="bottom">Already have an account?  <a class="bottom" href="{{url_for('login')}}"> Sign In here</a></p></center>
+     </span>
+  
+  </div>
+</div>
+</body>
+</html>

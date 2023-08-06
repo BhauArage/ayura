@@ -1,0 +1,342 @@
+ /* ------------------------------------------------------ GENERAL PAGE SETUP ---------------------------------------------------- */
+
+ :root {
+    --body_gradient_left: #7200d0;
+    --body_gradient_right: #c800c1;
+    --form_bg: white;
+    --input_bg: #cfcfcf;
+    --input_hover: #eaeaea;
+    --submit_bg: #85f081;
+    --submit_hover: #40e263;
+    --icon_color: #6b6b6b;
+    --link_color: #5d5e5c;
+    --link_submit: #353635;
+  }
+  
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  } 
+  
+  body {
+    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    background-attachment: linear-gradient(
+      to right,
+      var(--body_gradient_left),
+      var(--body_gradient_right)
+    );
+    display: flex;
+  }
+
+ .glass{
+    float: right;
+  }
+
+  .center{
+    justify-content: center;
+  margin: auto;}
+/* --------------------------------------------------------------------------------------------------------------------------- */
+
+/* ------------------------------------------------------ ABOUT PAGE ---------------------------------------------------------- 
+html {
+box-sizing: border-box;
+}
+
+.column {
+width: 80%;
+margin-bottom: 16px;
+padding: 0 8px;
+}
+
+.card {
+height: 400px;
+width: 400px;
+box-shadow: 0 4px 8px 0 rgba(47, 47, 47, 0.2);
+margin: 2px;
+}
+
+.about-section {
+padding: 50px;
+text-align: center;
+background-color: #8a7765;
+color: white;
+}
+
+.container {
+height: 100px;
+width: 400px;
+padding: 0 16px;
+}
+
+.container::after, .row::after {
+content: "";
+clear: both;
+display: table;
+}
+
+.title {
+color: grey;
+}
+
+.circle {
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    padding: 10px;
+    background: #fff;
+    border: 3px solid #000;
+    color: #000;
+    text-align: center;
+    font: 24px Arial, sans-serif;
+  }
+
+  @media screen and (max-width: 650px) {
+    .column {
+      width: 100%;
+      display: block;
+    } */
+
+/* --------------------------------------------------------------------------------------------------------------------------- */
+
+  
+/*------------------------------------------------- LOGIN AND REGISTRATION PAGES -------------------------------------------------*/
+      #form{
+          height: 700px;
+          width: 1000px;
+          margin: auto;
+        background-color: var(--form_bg);
+          border-radius: 50px;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-gap: 5vw;
+          padding: 5vh 15px;
+          }
+      #form_left{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          }
+  
+          #form_left img{
+              width: 350px;
+              height: 350px;
+          }
+  
+      #form_right{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 20px;
+        padding: 10% 5%;
+  }
+  
+  .input_container {
+    background-color: var(--input_bg);
+    /* vertically align icon and text inside the div*/
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+  }
+  .input_container:hover {
+    background-color: var(--input_hover);
+  }
+  .input_container,
+  #input_submit {
+    height: 40px;
+    border-radius: 30px;
+    width: 100%;
+  }
+  .input_field {
+    color: var(--icon_color);
+    background-color: inherit;
+    width: 90%;
+    border: none;
+    font-size: 1.3rem;
+    font-weight: 400;
+    padding-left: 30px;
+  }
+  .input_field:hover,
+  .input_field:focus {
+    outline: none;
+  }
+  #input_submit {
+    background-color: var(--submit_bg);
+    padding-left: 0;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+  }
+  #input_submit:hover {
+    background-color: var(--submit_hover);
+    transition: background-color, 1s;
+    cursor: pointer;
+  }
+  
+  span {
+    text-align: center;
+  }
+  #create_account {
+    display: block;
+    position: relative;
+    top: 30px;
+  }
+  a {
+    text-decoration: none;
+    color: var(--link_color);
+    font-weight: bold;
+  }
+  a:hover {
+    color: var(--link_submit);
+  }
+  
+  @media screen and (max-width: 768px) {
+    #form {
+      grid-template-columns: 1fr;
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+    #form_left {
+      display: none;
+    }
+  }
+/* --------------------------------------------------------------------------------------------------------------------------- */
+
+/* ---------------------------------------------------- NAVIGATION BARS -------------------------------------------------------*/
+.navbar {
+    overflow: hidden;
+    float: left;
+    background-color: #8a7765;
+    position: fixed;
+    top: 0;
+    left: 0px;
+    width: 100%;
+  }
+  
+.navbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+.navbar a:hover {
+    background: #ddd;
+    color: black;
+  }
+
+.navbar-right {
+    float: right;
+  }
+
+  .word{
+    color: #000;
+    font-style: oblique;
+    font-weight: bold;
+}
+
+
+.inputGroup {
+  background-color: #fff;
+  display: block;
+  margin: 10px 0;
+  position: relative;
+}
+ 
+.form {
+  line-height: 36px;
+}
+
+body {
+  background-color: #eeeeee;
+
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+code {
+  background-color: white;
+  padding: 0 8px;
+}
+
+.title{
+  padding-top: 20px;
+  font-weight: 10 !important;
+}
+
+.subtitle{
+ 
+  font-weight: 5 !important;
+}
+
+.fa-fire{
+  color: orange;
+  margin-right: 10px;
+}
+
+.fa-tint{
+  color: lightblue;
+  margin-right: 10px;
+
+}
+
+.fa-wind{
+  color: lightcoral;
+  margin-right: 10px;
+}
+
+.question{
+  padding-top: 50px;
+  font-weight: 200;
+  text-align: left;
+}
+
+.btn-ayurveda{
+  border-radius: 0px !important;
+  padding: 20px;
+  width: 100%;
+}
+
+.margin-top-large{
+  margin-top: 50px;
+}
+
+.chart{
+  padding-top: 50px;
+  padding-bottom: 30px;
+}
+
+.footer{
+  font-size: 16px;
+}
+
+#doshanumbers{
+  margin-top: 40px;
+}
+
+#vata{
+  color: lightcoral;
+}
+
+#pitta{
+  color: orange;
+}
+
+#kapha{
+  color: lightblue;
+}
+
+.result{
+  margin-right: 3px !important;
+}
